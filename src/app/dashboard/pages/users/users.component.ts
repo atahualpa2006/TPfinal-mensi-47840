@@ -43,6 +43,7 @@ export class UsersComponent implements OnDestroy {
               email: v.email,
               password: v.password,
               surname: v.surname,
+              role: v.role,
             });
           }
         },
@@ -54,7 +55,7 @@ export class UsersComponent implements OnDestroy {
       this.userService.deleteUserById(userToDelete.id);
       this.notifier.showSuccess('Eliminacion exitosa');
     }
-  
+
 
 
 

@@ -4,6 +4,7 @@ import { AuthService } from '../../../auth/auth.services';
 import { Store } from '@ngrx/store';
 import { Observable, observable } from 'rxjs';
 import { selectAuthUserRole } from 'src/app/store/auth/auth.selector';
+import { selectIsAdmin } from '../../../store/auth/auth.selector';
 
 @Component({
   selector: 'app-nav-menu',
@@ -12,14 +13,16 @@ import { selectAuthUserRole } from 'src/app/store/auth/auth.selector';
 })
 export class NavMenuComponent {
 
-public role$: Observable <'ADMINISTRADOR' | 'USUARIO'| undefined>;
+// public selectIsAdmin$ : Observable <boolean>;
+  public role$: Observable < 'ADMINISTRADOR' | 'USUARIO' | undefined>;
 
   constructor(
     private router: Router,
     private authService: AuthService,
     private store: Store
     ) {
-      this.role$ = this.store.select (selectAuthUserRole)
+      this.role$ = this.store.select(selectAuthUserRole);
+      // this.selectIsAdmin$ = this.store.select (selectIsAdmin);
     }
 
   logout():void {

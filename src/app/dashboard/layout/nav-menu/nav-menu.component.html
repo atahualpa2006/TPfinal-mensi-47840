@@ -1,7 +1,8 @@
 
 <mat-nav-list>
     <a routerLink="home" mat-list-item  >Inicio</a>
-    <a *ngif="(role$ |async) === 'ADMINISTRADOR'"   routerLink="users" mat-list-item>Usuarios</a>
+    <a *ngIf="(role$ |async) === 'ADMINISTRADOR'" routerLink="users" mat-list-item>Usuarios</a>
+    <!-- <a *ngif="selectIsAdmin$ |async"   routerLink="users" mat-list-item>Usuarios</a> -->
     <a routerLink="alumns" mat-list-item>Alumnos</a>
     <!-- <a routerLink="courses" mat-list-item>Cursos</a> -->
     <a routerLink="folders" mat-list-item>cursos</a>
